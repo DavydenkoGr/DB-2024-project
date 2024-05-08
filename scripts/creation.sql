@@ -22,7 +22,7 @@ CREATE TABLE EDiary.teacher (
 CREATE TABLE EDiary.class (
     class_id SERIAL PRIMARY KEY,
     number INTEGER NOT NULL,
-    letter CHAR NOT NULL
+    letter CHAR NOT NULL,
     CONSTRAINT unique_number_letter UNIQUE (number, letter)
 );
 
@@ -40,7 +40,7 @@ CREATE TABLE EDiary.lesson (
     FOREIGN KEY (class_id) REFERENCES EDiary.class(class_id),
     FOREIGN KEY (teacher_id) REFERENCES EDiary.teacher(teacher_id),
     FOREIGN KEY (subject_id) REFERENCES EDiary.subject(subject_id),
-    CONSTRAINT one_lesson_at_time UNIQUE (class_id, shedule)
+    CONSTRAINT one_lesson_at_time UNIQUE (class_id, schedule)
 );
 
 CREATE TABLE EDiary.task (
