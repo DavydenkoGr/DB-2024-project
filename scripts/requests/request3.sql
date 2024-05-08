@@ -16,5 +16,5 @@ GROUP BY
     phone,
     surname
 ORDER BY
-    homework_count
+    homework_count DESC
 LIMIT 5;
