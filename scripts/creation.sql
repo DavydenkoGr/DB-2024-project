@@ -70,3 +70,4 @@ CREATE TABLE EDiary.class_history (
     FOREIGN KEY (class_id) REFERENCES EDiary.class (class_id),
     PRIMARY KEY (student_id, class_id, start_date)
 );
+
