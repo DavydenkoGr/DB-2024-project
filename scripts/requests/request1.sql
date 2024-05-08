@@ -1,5 +1,5 @@
 WITH
-    a1 as (
+    a1 AS (
         SELECT
             class_id
         FROM
@@ -12,9 +12,9 @@ SELECT
     name,
     surname
 FROM
-    ediary.student as student
+    ediary.student AS student
 INNER JOIN
-    ediary.class_history as class_history
+    ediary.class_history AS class_history
     ON student.student_id = class_history.student_id
 WHERE
     student.class_id = (SELECT * FROM a1) OR
