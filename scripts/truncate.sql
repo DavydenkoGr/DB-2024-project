@@ -6,4 +6,4 @@ TRUNCATE
     EDiary.teacher,
     EDiary.student,
     EDiary.class,
-    EDiary.subject
+    EDiary.subject;
