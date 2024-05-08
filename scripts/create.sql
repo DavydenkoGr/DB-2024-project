@@ -1,4 +1,11 @@
-CREATE SCHEMA EDiary;
+CREATE SCHEMA IF NOT EXISTS EDiary;
+
+CREATE TABLE EDiary.class (
+    class_id SERIAL PRIMARY KEY,
+    number   INTEGER CHECK (number >= 0 AND number <= 11),
+    letter   CHAR NOT NULL,
+    CONSTRAINT unique_number_letter UNIQUE (number, letter)
+);
 
 CREATE TABLE EDiary.student (
     student_id      SERIAL PRIMARY KEY,
@@ -17,13 +24,6 @@ CREATE TABLE EDiary.teacher (
     surname         VARCHAR(128) NOT NULL,
     phone           VARCHAR CHECK (phone LIKE '+7 (___) ___-__-__') UNIQUE,
     hashed_password VARCHAR      NOT NULL
-);
-
-CREATE TABLE EDiary.class (
-    class_id SERIAL PRIMARY KEY,
-    number   INTEGER CHECK (number >= 0 AND number <= 11),
-    letter   CHAR NOT NULL,
-    CONSTRAINT unique_number_letter UNIQUE (number, letter)
 );
 
 CREATE TABLE EDiary.subject (

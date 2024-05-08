@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS EDiary.class_history;
+DROP TABLE IF EXISTS EDiary.mark;
+DROP TABLE IF EXISTS EDiary.task;
+DROP TABLE IF EXISTS EDiary.lesson;
+DROP TABLE IF EXISTS EDiary.teacher;
+DROP TABLE IF EXISTS EDiary.student;
+DROP TABLE IF EXISTS EDiary.class;
+DROP TABLE IF EXISTS EDiary.subject;

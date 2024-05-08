@@ -1,0 +1,9 @@
+TRUNCATE
+    EDiary.class_history,
+    EDiary.mark,
+    EDiary.task,
+    EDiary.lesson,
+    EDiary.teacher,
+    EDiary.student,
+    EDiary.class,
+    EDiary.subject

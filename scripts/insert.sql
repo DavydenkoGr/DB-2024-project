@@ -57,29 +57,29 @@ VALUES (1, 'Эрен', 'Йегер', '+7 (123) 456-78-90', 'hashed_password1', '
        (3, 'Марко', 'Ботт', '+7 (890) 123-45-67', 'hashed_password8', '2023-01-01'),
        (4, 'Райнер', 'Браун', '+7 (901) 234-56-78', 'hashed_password9', '2023-01-01'),
        (4, 'Бертольт', 'Хувер', '+7 (012) 345-67-89', 'hashed_password10', '2023-01-01'),
-       (4, 'Анни', 'Леонхарт', '+7 (123) 456-78-90', 'hashed_password11', '2023-01-01'),
-       (17, 'Хистория', 'Райс', '+7 (234) 567-89-01', 'hashed_password12', '2023-01-01'),
-       (17, 'Ймир', 'Фриц', '+7 (345) 678-90-12', 'hashed_password13', '2023-01-01'),
-       (17, 'Ханджи', 'Зоэ', '+7 (456) 789-01-23', 'hashed_password14', '2023-01-01'),
-       (17, 'Эрвин', 'Смит', '+7 (567) 890-12-34', 'hashed_password15', '2023-01-01');
+       (4, 'Анни', 'Леонхарт', '+7 (123) 456-78-91', 'hashed_password11', '2023-01-01'),
+       (17, 'Хистория', 'Райс', '+7 (234) 567-89-11', 'hashed_password12', '2023-01-01'),
+       (17, 'Ймир', 'Фриц', '+7 (345) 678-90-22', 'hashed_password13', '2023-01-01'),
+       (17, 'Ханджи', 'Зоэ', '+7 (456) 789-11-23', 'hashed_password14', '2023-01-01'),
+       (17, 'Эрвин', 'Смит', '+7 (567) 890-14-34', 'hashed_password15', '2023-01-01');
 
 
 INSERT INTO EDiary.teacher (name, surname, phone, hashed_password)
-VALUES ('Jonathan', 'Joestar', '+7 (123) 456-78-90', 'hashed_password1'),
-       ('Joseph', 'Joestar', '+7 (234) 567-89-01', 'hashed_password2'),
-       ('Jotaro', 'Kujo', '+7 (345) 678-90-12', 'hashed_password3'),
+VALUES ('Jonathan', 'Joestar', '+7 (223) 456-78-90', 'hashed_password1'),
+       ('Joseph', 'Joestar', '+7 (233) 567-89-01', 'hashed_password2'),
+       ('Jotaro', 'Kujo', '+7 (346) 678-90-12', 'hashed_password3'),
        ('Josuke', 'Higashikata', '+7 (456) 789-01-23', 'hashed_password4'),
-       ('Giorno', 'Giovanna', '+7 (567) 890-12-34', 'hashed_password5'),
-       ('Jolyne', 'Cujoh', '+7 (678) 901-23-45', 'hashed_password6'),
-       ('Johnny', 'Joestar', '+7 (789) 012-34-56', 'hashed_password7'),
-       ('Gyro', 'Zeppeli', '+7 (890) 123-45-67', 'hashed_password8'),
-       ('Bruno', 'Bucciarati', '+7 (901) 234-56-78', 'hashed_password9'),
-       ('Narancia', 'Ghirga', '+7 (012) 345-67-89', 'hashed_password10'),
-       ('Mista', 'Guido', '+7 (123) 456-78-90', 'hashed_password11'),
-       ('Diavolo', 'Boss', '+7 (234) 567-89-01', 'hashed_password12'),
-       ('Kira', 'Yoshikage', '+7 (345) 678-90-12', 'hashed_password13'),
-       ('Rohan', 'Kishibe', '+7 (456) 789-01-23', 'hashed_password14'),
-       ('Okuyasu', 'Nijimura', '+7 (567) 890-12-34', 'hashed_password15');
+       ('Giorno', 'Giovanna', '+7 (367) 890-12-34', 'hashed_password5'),
+       ('Jolyne', 'Cujoh', '+7 (672) 901-23-45', 'hashed_password6'),
+       ('Johnny', 'Joestar', '+7 (689) 012-34-56', 'hashed_password7'),
+       ('Gyro', 'Zeppeli', '+7 (890) 423-45-67', 'hashed_password8'),
+       ('Bruno', 'Bucciarati', '+7 (951) 234-56-78', 'hashed_password9'),
+       ('Narancia', 'Ghirga', '+7 (012) 845-67-89', 'hashed_password10'),
+       ('Mista', 'Guido', '+7 (124) 456-08-90', 'hashed_password11'),
+       ('Diavolo', 'Boss', '+7 (234) 567-09-01', 'hashed_password12'),
+       ('Kira', 'Yoshikage', '+7 (345) 618-90-12', 'hashed_password13'),
+       ('Rohan', 'Kishibe', '+7 (456) 389-01-23', 'hashed_password14'),
+       ('Okuyasu', 'Nijimura', '+7 (657) 890-12-34', 'hashed_password15');
 
 
 INSERT INTO EDiary.subject (name)
