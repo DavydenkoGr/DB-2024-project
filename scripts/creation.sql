@@ -21,7 +21,7 @@ CREATE TABLE EDiary.teacher (
 
 CREATE TABLE EDiary.class (
     class_id SERIAL PRIMARY KEY,
-    number INTEGER NOT NULL,
+    number INTEGER CHECK (number >= 0 AND number <= 11),
     letter CHAR NOT NULL,
     CONSTRAINT unique_number_letter UNIQUE (number, letter)
 );
