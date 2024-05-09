@@ -20,6 +20,14 @@ WHERE
         WHERE
             name = 'Математика'
     ) AND
-    schedule::date = '2024-01-01'
+    schedule::date = '2024-01-01' AND
+    class_id = (
+        SELECT
+            class_id
+        FROM
+            ediary.class
+        WHERE
+            number = 1 AND letter = 'A'
+    )
 ORDER BY
     schedule;
