@@ -20,11 +20,13 @@ WITH
     )
 
 SELECT
-    name,
     surname,
+    name,
     phone
 FROM
     ediary.student
-JOIN
-    student_id
-    ON student_id.student_id = student.student_id;
+WHERE
+    student_id IN (SELECT * FROM student_id)
+ORDER BY
+    surname,
+    name;

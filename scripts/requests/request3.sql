@@ -1,6 +1,6 @@
 SELECT
-    name,
     surname,
+    name,
     phone,
     count(*) AS homework_count
 FROM
@@ -12,9 +12,12 @@ NATURAL JOIN
 WHERE
     type = 1
 GROUP BY
+    lesson.teacher_id,
     name,
     phone,
     surname
 ORDER BY
-    homework_count DESC
+    homework_count DESC,
+    surname,
+    name
 LIMIT 5;

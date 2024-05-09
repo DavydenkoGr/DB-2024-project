@@ -21,8 +21,8 @@ WITH
     )
 
 SELECT
-    name,
     surname,
+    name,
     current_class,
     enrollment_date
 FROM
@@ -31,4 +31,7 @@ NATURAL JOIN
     year
 WHERE
     current_class = 10 AND studied_years = 0 OR
-    current_class = 11 AND studied_years = 1;
+    current_class = 11 AND studied_years = 1
+ORDER BY
+    surname,
+    name;

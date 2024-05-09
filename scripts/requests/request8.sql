@@ -19,6 +19,7 @@ WHERE
     schedule > '2023-12-31' AND
     schedule < '2024-06-01'
 GROUP BY
+    subject_id,
     subject.name
 ORDER BY
     subject.name;

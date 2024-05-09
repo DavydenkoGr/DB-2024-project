@@ -1,7 +1,7 @@
 SELECT
     concat(number, letter) AS class,
-    student.name,
     student.surname,
+    student.name,
     description AS task_description,
     schedule::date
 FROM
@@ -18,4 +18,15 @@ JOIN
     ediary.class AS class ON student.class_id = class.class_id
 WHERE
     value = 0 AND
-    lesson.teacher_id = 8;
+    lesson.teacher_id = 8
+GROUP BY
+    student.surname,
+    student.name,
+    number,
+    letter,
+    task_description,
+    schedule
+ORDER BY
+    schedule,
+    surname,
+    name;
