@@ -1,9 +1,12 @@
 TRUNCATE
-    EDiary.class_history,
-    EDiary.mark,
-    EDiary.task,
-    EDiary.lesson,
-    EDiary.teacher,
-    EDiary.student,
-    EDiary.class,
-    EDiary.subject;
+    ediary.subject_to_class,
+    ediary.teacher_to_class,
+    ediary.teacher_to_subject,
+    ediary.class_history,
+    ediary.mark,
+    ediary.task,
+    ediary.lesson,
+    ediary.teacher,
+    ediary.student,
+    ediary.class,
+    ediary.subject;

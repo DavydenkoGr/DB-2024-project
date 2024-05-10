@@ -71,3 +71,26 @@ CREATE TABLE EDiary.class_history (
     PRIMARY KEY (student_id, class_id, start_date)
 );
 
+CREATE TABLE EDiary.subject_to_class (
+    subject_id INTEGER NOT NULL,
+    class_id   INTEGER NOT NULL,
+    FOREIGN KEY (subject_id) REFERENCES EDiary.subject (subject_id),
+    FOREIGN KEY (class_id) REFERENCES EDiary.class (class_id),
+    PRIMARY KEY (subject_id, class_id)
+);
+
+CREATE TABLE EDiary.teacher_to_class (
+    teacher_id INTEGER NOT NULL,
+    class_id   INTEGER NOT NULL,
+    FOREIGN KEY (teacher_id) REFERENCES EDiary.teacher (teacher_id),
+    FOREIGN KEY (class_id) REFERENCES EDiary.class (class_id),
+    PRIMARY KEY (teacher_id, class_id)
+);
+
+CREATE TABLE EDiary.teacher_to_subject (
+    teacher_id INTEGER NOT NULL,
+    subject_id INTEGER NOT NULL,
+    FOREIGN KEY (teacher_id) REFERENCES EDiary.teacher (teacher_id),
+    FOREIGN KEY (subject_id) REFERENCES EDiary.subject (subject_id),
+    PRIMARY KEY (teacher_id, subject_id)
+);

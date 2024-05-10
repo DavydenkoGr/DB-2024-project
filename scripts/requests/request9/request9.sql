@@ -1,36 +1,67 @@
 WITH
-    class_subject_avg AS (
+    subject_to_student AS (
         SELECT
-            class_id,
-            avg(value) AS average_score
+            student_id,
+            subject_id
         FROM
-            ediary.class AS class
+            ediary.subject
         NATURAL JOIN
+            ediary.subject_to_class
+        NATURAL JOIN
+            ediary.class AS class
+        JOIN
+            ediary.student AS student
+            ON student.class_id = class.class_id
+        GROUP BY
+            student_id,
+            subject_id
+    ),
+    avg_for_existing AS (
+        SELECT
+            student_id,
+            subject_id,
+            avg(value)
+        FROM
             ediary.lesson AS lesson
         NATURAL JOIN
-            ediary.subject AS subject
-        NATURAL JOIN
             ediary.task AS task
-        NATURAL JOIN
+        JOIN
             ediary.mark AS mark
+            ON mark.task_id = task.task_id
         WHERE
             value != 0 AND
-            schedule > '2023-12-31' AND
-            schedule < '2024-06-01'
+            schedule BETWEEN '2024-01-01' AND '2024-05-31'
         GROUP BY
-            class_id,
-            subject_id
+            subject_id,
+            student_id
+    ),
+    student_avg AS (
+        SELECT
+            avg_for_existing.student_id,
+            avg(avg_for_existing.avg) AS average_score
+        FROM
+            subject_to_student
+        JOIN
+            avg_for_existing
+            ON avg_for_existing.subject_id = subject_to_student.subject_id AND
+               avg_for_existing.student_id = subject_to_student.student_id
+        JOIN
+            ediary.subject AS subject
+            ON subject_to_student.subject_id = subject.subject_id
+        GROUP BY
+            avg_for_existing.student_id
     )
 
 SELECT
-    concat(number, letter) AS class,
-    coalesce(avg(average_score), 0) AS average_score
+    surname,
+    name,
+    coalesce(average_score, 0) AS average_score
 FROM
-    ediary.class
+    ediary.student AS student
 LEFT JOIN
-    class_subject_avg
-    ON class.class_id = class_subject_avg.class_id
-GROUP BY
-    class
+    student_avg
+    ON student_avg.student_id = student.student_id
 ORDER BY
+    surname,
+    name,
     average_score DESC;
