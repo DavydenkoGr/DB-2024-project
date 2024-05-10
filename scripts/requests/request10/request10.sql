@@ -7,18 +7,23 @@ SELECT
 FROM
     ediary.student AS student
 JOIN
-    ediary.mark AS mark ON student.student_id = mark.student_id
+    ediary.mark AS mark
+    ON student.student_id = mark.student_id
 JOIN
-    ediary.task AS task ON mark.task_id = task.task_id
+    ediary.task AS task
+    ON mark.task_id = task.task_id
 JOIN
-    ediary.lesson AS lesson ON task.lesson_id = lesson.lesson_id
+    ediary.lesson AS lesson
+    ON task.lesson_id = lesson.lesson_id
 JOIN
-    ediary.teacher AS teacher ON lesson.teacher_id = teacher.teacher_id
+    ediary.teacher AS teacher
+    ON lesson.teacher_id = teacher.teacher_id
 JOIN
-    ediary.class AS class ON student.class_id = class.class_id
+    ediary.class AS class
+    ON student.class_id = class.class_id
 WHERE
     value = 0 AND
-    lesson.teacher_id = 8
+    lesson.teacher_id = 5
 GROUP BY
     student.surname,
     student.name,
