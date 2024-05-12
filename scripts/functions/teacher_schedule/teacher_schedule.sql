@@ -1,7 +1,12 @@
 DROP FUNCTION IF EXISTS teacher_schedule(INTEGER, DATE);
 
 CREATE FUNCTION teacher_schedule(teacher_id INTEGER, date DATE)
-RETURNS TABLE(lesson_id INTEGER, subject_id INTEGER, class_id INTEGER, schedule TIME) AS $$
+RETURNS TABLE (
+    lesson_id  INTEGER,
+    subject_id INTEGER,
+    class_id   INTEGER,
+    schedule   TIME
+) AS $$
     SELECT
         lesson_id,
         subject_id,
